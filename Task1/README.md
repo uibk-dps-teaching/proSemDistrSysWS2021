@@ -9,7 +9,7 @@
 
 ### Step 1 - Setup.
 
-1. Clone the exercise project from its GitHub repository
+1. Clone the exercise project from its  [GitHub repository](https://github.com/FedorSmirnov89/proSemDistrSysWS2021/tree/master/Task1)
 2. Build the project---i.e. download the project dependencies defined in the  _build.gradle_  file and compile the project---using gradle:
 
 > `gradle build`  
@@ -18,22 +18,29 @@
 
 > `gradle eclipse`
         
-### Step 2 - Opt4J Tutorial.
+### Step 2 - AWS Java SDK documentation.
 
-1. Read the first and the second sections of the [Opt4J Tutorial](http://opt4j.sourceforge.net/documentation/3.0/tutorial.xhtml) (Defining Optimization Problems). Try to understand the purpose of _Creators_, _Decoders_, and _Evaluators_.
-2. Run the _Hello World_ example within the exercise project:
-   > Right click on the _HelloWorld.launch_ file in _./launches_ -> Run as ->      HelloWorld -> Click the "Run" Button in the configurator 
+1. Have a look at the documentation of the Java SDK for AWS on the [website](https://docs.aws.amazon.com/sdk-for-java/index.html). Note that, for the tasks within this proseminar, we will be using the SDK Version 1, so read the corresponding parts of the manual.
+2. When looking at the manual, you should prioritze the following parts:
+	* [First steps](https://docs.aws.amazon.com/de_de/sdk-for-java/v1/developer-guide/getting-started.html)
+	* [Code examples for EC2](https://docs.aws.amazon.com/de_de/sdk-for-java/v1/developer-guide/prog-services-ec2.html)
+	* [Managing EC2 instances](https://docs.aws.amazon.com/de_de/sdk-for-java/v1/developer-guide/examples-ec2-instances.html)
+3. Create a user with a set of credentials and the appropriate rights for the homework task. Download its credentials to your local machine.
+	
 
-   Familiarize yourself with the Opt4J configurator and -viewer.
+### Step 3 - Managing an EC2 instance.
 
-### Step 3 - Implementing an optimization.
+Implement a script which will create an EC2 instance, start it, measure the time required to start the instance, and then terminate the instance. More specifically, the script should contain the following steps:
 
-1. Think of a problem you would like to optimize
-2. Implement this optimization within the exercise project by adding code within the classes
-   * _MyFirstCreator.class_
-   * _MyFirstDecoder.class_
-   * _MyFirstEvaluator.class_
+1. Retrieve the credentials
+2. Create a key pair to access the EC2 instance
+3. Create a security group and set the appropriate authorizations
+4. Start the EC2 instance
+5. Retrieve the instance ID
+6. Measure the time between the startup time of the instance
+7. Terminate the instance
 
-**_Note:_**  To run the optimization defined by the above classes:
-> Right click on _MyFirstProblem.launch_ file in _./launches_ -> Run as -> MyFirstProblem ->Click the "Run" Button in the configurator
+To complete the task, upload a .zip file of your project to OLAT.
+
+**_Note:_**  Use the AWS management console to check that each of the steps is executed correctly. In particular, you should make sure that the EC2 instance is terminated after the script has been executed.
     
