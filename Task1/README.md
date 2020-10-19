@@ -30,14 +30,14 @@
 
 ### Step 3 - Managing an EC2 instance.
 
-Implement a script which will create an EC2 instance, start it, measure the time required to start the instance, and then terminate the instance. More specifically, the script should contain the following steps:
+Within the given project, implement a "main" method which will create an EC2 instance, start it, measure the time required to start the instance, and then terminate the instance. More specifically, the script should contain the following steps:
 
 1. Retrieve the credentials
 2. Create a key pair to access the EC2 instance
 3. Create a security group and set the appropriate authorizations
 4. Start the EC2 instance
 5. Retrieve the instance ID
-6. Measure the time between the startup time of the instance
+6. Measure the the startup time of the instance (i.e., the time between (a) the point when the script issues the stratup command and (b) the point when the status of the instance is displayed as "running")
 7. Terminate the instance
 
 To complete the task, upload a .zip file of your project to OLAT.
