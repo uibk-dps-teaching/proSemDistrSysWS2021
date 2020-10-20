@@ -1,6 +1,6 @@
 
 
-## Task 1: "First steps the Java SDK of AWS"
+## Task 1: "First steps with the Java SDK of AWS"
 
 ### Goals of the task:
 
