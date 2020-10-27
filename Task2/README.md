@@ -29,7 +29,7 @@
 
 ### Step 3 - Controlling a single VM via SSH using a script.
 
-1. Implement a Java script to start a VM and execute the parts 1.-5. from Step 2.
+1. Implement a Java script to start a VM and execute the parts 1.-6. from Step 2.
 2. Measure the time required for the operation.
 
 **_Note:_** You may want to (a) reuse the code you wrote for the for Task 1 and (b) use [Jsch](http://www.jcraft.com/jsch/) for the automation of the SSH operations (the dependency to Jsch and an example command are included in the task project in the task repository).
@@ -44,3 +44,7 @@
 
 1. Investigate how the speedup achieved by using 2 VMs instead of one depends on the way you split the workload file.
 2. What is the optimal way to split the file?
+
+### Task Upload
+
+In order to pass this task, you have to upload the .java files of your task project and a text file containing the speedup discussion to OpenOlat.  
