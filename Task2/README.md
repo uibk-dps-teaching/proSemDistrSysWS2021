@@ -21,7 +21,7 @@
 1. Create a VM instance (without preinstalled Java) and connect to it using SSH.
 2. Connect to the VM using SSH.
 3. Install Java 8 on the VM.
-4. Use SCP to copy the file _calc\_fib.jar_ to the VM.
+4. Use SCP to copy the files _calc\_fib.jar_ and _input\_full.csv_ to the VM.
 5. Execute the file and download the result to your local machine.
 6. Terminate the VM.
 
@@ -29,18 +29,22 @@
 
 ### Step 3 - Controlling a single VM via SSH using a script.
 
-1. Implement a Java script to start a VM and execute the parts 1.-5. from Step 2.
+1. Implement a Java script to start a VM and execute the parts 1.-6. from Step 2.
 2. Measure the time required for the operation.
 
 **_Note:_** You may want to (a) reuse the code you wrote for the for Task 1 and (b) use [Jsch](http://www.jcraft.com/jsch/) for the automation of the SSH operations (the dependency to Jsch and an example command are included in the task project in the task repository).
 
-### Step 3 - Controlling multiple VMs via SSH using a script.
+### Step 4 - Controlling multiple VMs via SSH using a script.
 
 1. Split the workload by (manually) distributing the content of the input file _input\_full.csv_ between two files _input\_half\_one.csv_ and _input\_half\_two.csv_.
 2. Implement a Java script to create and initialize two VMs (install Java, load the files, etc.), send one workload file to each machine, process the workload, and download the results.
 3. Measure the time required for processing. 
 
-### Step 4 - Discussion.
+### Step 5 - Discussion.
 
 1. Investigate how the speedup achieved by using 2 VMs instead of one depends on the way you split the workload file.
 2. What is the optimal way to split the file?
+
+### Task Upload
+
+In order to pass this task, you have to upload the .java files of your task project and a text file containing the speedup discussion to OpenOlat.  
