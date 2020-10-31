@@ -1,4 +1,4 @@
-package homework1;
+package homework3;
 
 /**
  * Fill in your code into the main method of this class.
@@ -7,7 +7,7 @@ package homework1;
  * @author Fedor Smirnov
  *
  */
-public class TaskOne {
+public class TaskThree {
 
 	public static void main(String[] args) {
 		// TODO implement the bahavior detailed in the README.md file

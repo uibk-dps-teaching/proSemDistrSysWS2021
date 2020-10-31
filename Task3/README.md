@@ -1,46 +1,50 @@
 
 
-## Task 2: "Automated control of multiple VMs."
+## Task 3: "Automated usage of Docker containers."
 
 ### Learning goals of the task:
 
-* Installing software on a VM
-* Accessing the VM via SSH to:
-	* Copy data from and to the VM
-	* Process data on the VM
-* Automating the SSH access
-* Distributing the workload between multiple VMs
+* Creation of Docker images
+* Pushing Docker images to Docker Hub
+* Pulling Docker images from Docker Hub
+* Automated usage of Docker containers on VMs:
+	* Installing Docker on a VM
+	* Pulling a Docker image
+	* Running an application in Docker
+	* Retrieving results from a Docker container
+
 
 ### Step 1 - Setup.
 
-1. Clone the exercise project from its  [GitHub repository](https://github.com/FedorSmirnov89/proSemDistrSysWS2021/tree/master/Task2)
-2. Build the project (same procedure as for Task 1)
+1. Clone the exercise project from its  [GitHub repository](https://github.com/FedorSmirnov89/proSemDistrSysWS2021/tree/master/Task3)
+2. Build the project (same procedure as for Tasks 1 and 2)
         
-### Step 2 - Manually controlling a single VM via SSH.
+### Step 2 - Creation and Upload of a Docker image.
 
-1. Create a VM instance (without preinstalled Java) and connect to it using SSH.
-2. Connect to the VM using SSH.
-3. Install Java 8 on the VM.
-4. Use SCP to copy the file _calc\_fib.jar_ to the VM.
-5. Execute the file and download the result to your local machine.
-6. Terminate the VM.
+1. Have a look at the [Docker tutorial](https://docker-curriculum.com/#introduction) (the parts up until the 'Beanstalk' section are particularly useful for this task).
+2. Apply the things you learned to create a Docker image of _calc\_fib.jar_ (the application from the previous task).
+3. Upload the created image to Docker Hub.
 
-**_Note:_** You do not have to upload any results of Step 2 as part of your submission of Task 2.
+**_Note:_** You may want to test that the docker image showcases the correct behavior by running the corresponding container on your local machine. In particular, make sure that your Docker container is able to access external files (input and output of the fibonacci calculation).
 
-### Step 3 - Controlling a single VM via SSH using a script.
+### Step 3 - Automated Usage of Docker Containers on a VM.
 
-1. Implement a Java script to start a VM and execute the parts 1.-5. from Step 2.
-2. Measure the time required for the operation.
+Using the things you learned in the previous task, implement a Java program which will:
 
-**_Note:_** You may want to (a) reuse the code you wrote for the for Task 1 and (b) use [Jsch](http://www.jcraft.com/jsch/) for the automation of the SSH operations (the dependency to Jsch and an example command are included in the task project in the task repository).
+1. Start an EC2 instance.
+2. Install and start Docker on the instance.
+3. Pull the Docker image you created in Step 2.
+4. Run the docker image.
+5. Download the result of the calculation to your local machine.
+6. Terminate the instance.
 
-### Step 3 - Controlling multiple VMs via SSH using a script.
+### Step 4 - Measurement and Discussion.
 
-1. Split the workload by (manually) distributing the content of the input file _input\_full.csv_ between two files _input\_half\_one.csv_ and _input\_half\_two.csv_.
-2. Implement a Java script to create and initialize two VMs (install Java, load the files, etc.), send one workload file to each machine, process the workload, and download the results.
-3. Measure the time required for processing. 
+1. Measure the time required for the Tasks 1.-6. of the previous step, as well as the time required for the complete execution of the application.
+2. Compare the results of the measurement to the time required for the execution of the application from Task 2, in particular w.r.t. the initialization overhead.
 
-### Step 4 - Discussion.
+### Upload.
 
-1. Investigate how the speedup achieved by using 2 VMs instead of one depends on the way you split the workload file.
-2. What is the optimal way to split the file?
+In order to pass the task, you have to upload all **_.java files_** used in your solution, the **_Dockerfile_** used to build the Docker container, as well as a **_text file_** containing a description and discussion of your measurement results.
+
+
