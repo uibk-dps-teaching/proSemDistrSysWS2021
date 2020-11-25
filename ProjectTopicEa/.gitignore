@@ -1,0 +1,11 @@
+/.metadata/
+/build/
+/bin/
+.classpath
+/.gradle/
+.project
+/.settings/
+*.tsv
+/?/
+*.pdf
+*.jpg

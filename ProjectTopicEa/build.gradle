@@ -1,0 +1,38 @@
+buildscript {
+	repositories {
+		jcenter()
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'jacoco'
+// for compliance with higher Java versions
+jacoco {
+		toolVersion = "0.8.5"
+	}
+
+
+mainClassName = 'org.opt4j.core.start.Opt4J'
+
+group 'importance'
+version '1.0-SNAPSHOT'
+
+
+repositories {
+	mavenCentral()
+	
+	maven {
+		name "jitpack"
+		url 'https://jitpack.io' }
+}
+
+dependencies {
+	// as an example: dependency to Opt4J
+	implementation 'com.github.FedorSmirnov89:opt4j:-SNAPSHOT'
+	// test dependencies	
+	testCompile group: 'junit', 		name: 'junit', 					version: '4.+'
+	testCompile group: 'org.mockito',     name: 'mockito-core',     version: '3.4.4'
+}
